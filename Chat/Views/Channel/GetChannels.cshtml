@@ -1,0 +1,36 @@
+﻿@using Chat.Models;
+@model Group
+
+<div class="navigation-group-title" id="@Model.Id">
+    <span class="navigation-group-text" id="navigation-group-text-name">@Model.Name</span>
+    <div class="navigation-group-title-settings" id="group-settings">
+            
+        <img class="navigation-group-title-settings-img" src="/img/settings-icon.png" alt="">
+    </div>
+</div>
+<div id="group-settings-form">
+</div>
+
+<div class="navigation-group-channels">
+    <div class="navigation-group-channels-title">
+        Каналы
+        <div class="navigation-group-channels-count" id="channels-count" >@(Model.Channels?.Count ?? 0)</div>
+    </div>
+    <div class="navigation-group-channels-name" id="channels-block">
+        @if (Model.Channels != null)
+        {
+            @foreach (var item in Model.Channels)
+            {
+                <div class="navigation-group-channels-name-item" id="@item.Id">
+                    #@item.Name
+                    @if ((bool)@ViewData["UserIsAdmin"])
+                    {
+                        <div class="rename-channel" id="rename-channel-@item.Id" onclick="RenameChannelForm(@item.Id, event)">
+                            <i class="fa-solid fa-pen"></i>
+                        </div>
+                    }
+                </div>
+            }
+        }
+    </div>
+</div>

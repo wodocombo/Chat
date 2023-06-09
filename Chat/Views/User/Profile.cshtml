@@ -1,0 +1,25 @@
+﻿@using Chat.Models;
+@model User;
+
+<div class="modal" id="modal">
+    <div class="user-profile">
+        <div class="user-profile-info">
+            <div class="user-profile-info-avatar">
+                <div class="circle-avatar" onclick="ClickOnInputAvatar(event)">
+                    <img class="user-profile-info-avatar-image" src="@(Model?.AvatarImg ?? "img/user_icon.png")?@DateTime.Now.Ticks" alt="" />
+                    <div class="image-overlay">
+                        <span class="image-overlay-text" >Сменить изображение</span>
+                        <input id="profile-avatar-input" type="file" accept="image/png, image/jpeg" onchange="ChangeUserAvatar(event)" style="display: none;" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="user-profile-info-text">
+                <div class="user-profile-info-text-name">@Model.Name</div>
+            </div>
+        </div>
+        <div id="user-profile-exit">Выход из аккаунта</div>
+    </div>
+</div>
+
+

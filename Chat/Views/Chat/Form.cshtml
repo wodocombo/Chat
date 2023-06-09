@@ -1,0 +1,67 @@
+﻿@using Chat.Models;
+@model Channel;
+
+@if (Model != null)
+{
+    <div class="chat-nav">
+        <div class="chat-nav-name">
+            #@Model.Name
+        </div>
+        <div class="chat-nav-other">
+            <div class="chat-nav-count-people">@ViewBag.CountUsersInGroup</div>
+            <div class="chat-nav-search" onclick="ClickOnInputSearch(event)">
+                <input id="search-input" type="text" placeholder="Search..." onkeydown="MessagesTextSearch(event)">
+                <span><img src="~/img/searchIcon.png" alt=""></span>
+            </div>
+            @*<div class="chat-nav-notification active">
+                <img class="chat-nav-notification-img" src="~/img/notificationIcon.png" alt="">
+            </div>
+            <div class="chat-nav-more"></div>*@
+        </div>
+    </div>
+    <div id="chat-messages">
+        @if (Model.Messages != null)
+        {
+            @foreach (var item in Model.Messages)
+            {
+                <div class="user-message">
+                    <div class="user-message-photo"><img src="@(item.IdSentUser?.AvatarImg ?? "img/user_icon.png")?@DateTime.Now.Ticks" /></div>
+                    <div class="user-message-column">
+                        <div class="user-message-nameData">
+                            <div class="user-message-name">@item.IdSentUser.Name</div>
+                            <div class="user-message-dateTime">@item.CreatedMessage.ToLongTimeString()</div>
+                        </div>
+                        @if (item.Text.Contains("<div class=\"user-message-image\">"))
+                        {
+                            @Html.Raw(item.Text)
+                        }
+                        else
+                        {
+                            <div class="user-message-text">@item.Text</div>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="chat-sender">
+        @if (ViewBag.UserIsAuthenticated)
+        {
+            <input type="file" id="chat-sender-image" style="display: none;" onchange="SendImage(@Model.Id)" accept="image/jpeg,image/png" />
+            <div id="chat-sender-attach" onclick="SendImageEvent()"><i class="fa-solid fa-paperclip"></i></div>
+        }
+        <div id="chat-sender-text">
+            @if (ViewBag.UserIsAuthenticated)
+            {
+                <input id="chat-sender-text-input" placeholder="Message in #@Model.Name"/> 
+            }
+            else
+            {
+                <input id="chat-sender-text-input" placeholder="Зарегистрируйтесь что-бы писать сообщения в канале #@Model.Name" disabled />
+            }
+        </div>
+        @*<div id="chat-sender-smile"><i class="fa-regular fa-face-smile"></i></div>*@
+    </div>
+}
+
+

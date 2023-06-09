@@ -1,0 +1,81 @@
+﻿.user-profile {
+    width: 500px;
+    height: 350px;
+}
+
+.user-profile-info {
+    width: 100%;
+    height: 300px;
+    display: flex;
+}
+
+.user-profile-info-avatar {
+    display: flex;
+    width: 75%;
+    background-color: #F56868;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-avatar {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+    .circle-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.circle-avatar:hover .image-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.user-profile-info-text {
+    width: 50%;
+    height: 100%;
+    background-color: #D9D9D9;
+}
+
+.user-profile-info-text-name {
+    height: auto;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    background-color: #AE3030;
+    padding: 10px;
+}
+
+#user-profile-exit {
+    margin-top: 20px;
+    padding: 5px;
+    width: 200px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+}

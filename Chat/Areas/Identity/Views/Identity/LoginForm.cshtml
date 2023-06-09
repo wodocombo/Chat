@@ -1,0 +1,39 @@
+﻿<div class="modal" id="modal">
+    <div class="modal-form active" id="modal-login-form">
+        <form id="form-login">
+            <p>
+                <label>Email</label><br>
+                <input name="email" type="email">
+            </p>
+            <p>
+                <label>Password</label><br>
+                <input type="password" name="password">
+            </p>
+            <input class="button-method-close" type="submit" value="Login" onclick="Login(event)">
+        </form>
+
+        <div class="load-form" id="load-registration-form">Регистрация</div>
+    </div>
+
+
+
+    <div class="modal-form" id="modal-registration-form">
+        <form id="form-registration">
+            <p>
+                <label>Имя пользователя</label><br>
+                <input name="nickName">
+            </p>
+            <p>
+                <label>Email</label><br>
+                <input name="email" type="email">
+            </p>
+            <p>
+                <label>Password</label><br>
+                <input type="password" name="password">
+            </p>
+            <input class="button-method-close" type="submit" value="Регистрация" onclick="Registration(event)">
+        </form>
+        <div class="load-form" id="load-login-form">Логин</div>
+    </div>
+
+</div>

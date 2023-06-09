@@ -1,0 +1,30 @@
+﻿@using Chat.Models
+@model User
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @await Html.PartialAsync("Partial/HeadPartial")
+    <title>Chat</title>
+</head>
+<body>
+
+    @await Html.PartialAsync("Partial/GroupsPartial")
+
+    @await Html.PartialAsync("Partial/LoginPartial")
+
+    @await Html.PartialAsync("Partial/NavigationPartial")
+
+    @await Html.PartialAsync("Partial/ChatPartial")
+
+    @await Html.PartialAsync("Partial/BodyScriptsPartial")
+
+</body>
+
+</html>

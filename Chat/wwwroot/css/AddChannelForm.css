@@ -1,0 +1,35 @@
+﻿.channel-form {
+    display: flex;
+    align-items: center;
+}
+
+.channel-form-text {
+    padding: 5px 0px 9px 13px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    caret-color: white;
+}
+
+#channel-rename-form-text {
+    padding: 0;
+}
+
+    #channel-rename-form-text::placeholder {
+        color: white;
+    }
+
+
+.channel-sumbit {
+    width: 30px;
+}
+
+    .channel-sumbit i {
+        color: #ffffff;
+        font-size: 17px;
+    }
+
+.channel-cancel {
+    width: 30px;
+}

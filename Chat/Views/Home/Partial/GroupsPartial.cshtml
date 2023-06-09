@@ -1,0 +1,57 @@
+﻿@using Chat.Models
+@model User
+@{
+}
+
+
+<header class="group">
+    <div class="group-icons">
+        <a class="group-icons-circle red" href=""></a>
+        <a class="group-icons-circle yelow" href=""></a>
+        <a class="group-icons-circle green" href=""></a>
+    </div>
+
+    <div class="group-logos">
+        @foreach(var group in Model.Groups)
+        {
+            <div class="logos-item" id="@group.Id">
+                    <div class="logos-item-icon">
+                    <img class="logos-item-img" src=@(group.AvataImg ?? "/img/logo/Logo.png")?@DateTime.Now.Ticks alt="">
+                    </div>
+            </div>
+        }
+    </div> <!--./group-logos-->
+
+    <div class="group-bottom">
+        @if ((bool)ViewData["UserIsAuthenticated"])
+        {
+            <div class="group-login">
+                <button id="user">
+                    <img class="group-login-img" src="@(Model?.AvatarImg ?? "img/user_icon.png")?@DateTime.Now.Ticks" alt="">
+                </button>
+            </div>
+            <div class="group-add-item" id="add-group-button">
+                <img class="group-add-item-img" src="~/img/plus.png" alt="">
+            </div>
+            <div class="group-add-item-form" id="add-group-form" style="color: black;">
+                <div id="add-group-text">
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="group-login">
+                <button id="login">
+                    <img class="group-login-img" src="~/img/user_icon.png" alt="">
+                </button>
+            </div>
+            <div class="group-add-item" id="add-group-button">
+                <img class="group-add-item-img" src="~/img/plus.png" alt="">
+            </div>
+            <div class="group-add-item-form" id="add-group-form" style="color: black;">
+                <div id="add-group-text">
+                </div>
+            </div>
+        }
+    </div>
+</header>

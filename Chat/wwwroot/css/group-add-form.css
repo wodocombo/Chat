@@ -1,0 +1,33 @@
+﻿.group-add-item-form {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#add-group-text{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.add-group-text-form{
+    background-color: white;
+    padding: 10px; 
+    border: 1px solid;
+    box-shadow: 2px inset;
+}
+
+.add-group-text-label {
+    display: block;
+    padding: 10px 0px;
+}
+
+.add-group-text-button{
+    margin-top: 15px;
+}
