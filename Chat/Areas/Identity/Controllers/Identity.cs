@@ -74,7 +74,7 @@ namespace Chat.Areas.Identity.Controllers
                 return BadRequest("Поля не должны быть пустыми");
             }
 
-            Group? startGroup = _db.Groups.Find(1); // 1 = ID начальной группы (общай для всех)
+            Group? startGroup = _db.Groups.Find(1); // 1 = ID начальной группы (общей для всех)
 
             User newUser = new User() { Email = email, Password = password, Name = nickname };
             UserGroups userGroups = new UserGroups() { IdGroup = startGroup, IdUser = newUser };
